@@ -1,4 +1,3 @@
-
 import React from "react"
 import { } from "styled-components"
 
@@ -32,7 +31,8 @@ const Modal = (props) => {
                 }}
             >
                 <div className="modal-header">
-                    <button>X</button>
+                    <div className="modal-title" style={props.styles}>{props.title ? props.title : null}</div>
+                    <button onClick={props.toggleModal}>X</button>
                 </div>
                 {props.children}
             </div>
