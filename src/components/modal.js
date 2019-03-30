@@ -40,12 +40,4 @@ const Modal = (props) => {
     )
 }
 
-// Header.propTypes = {
-//     siteTitle: PropTypes.string,
-// }
-
-// Header.defaultProps = {
-//     siteTitle: ``,
-// }
-
 export default Modal

@@ -1,30 +1,36 @@
 import React from "react"
 import Post from "./post"
+import styled from "styled-components"
 
+const StyledPostList = styled.div`
+ display: flex;
+ flex-direction: column;
+ margin: 0 auto;
+ width: 80%;
+`;
 class PostList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      posts: [];
-    }
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
   //getPosts() function
   componentDidMount() {
     //getPosts()
   }
+
   render() {
+    const { posts } = this.props;
     return (
-      <div>
-        {this.state.posts.map(post => {
-          return(
-            <Post 
-            postTitle={#}
-            postContent={#}
-            commentCount={#}
+      <StyledPostList>
+        {posts.map((post, index) => {
+          return (
+            <Post key={index}
+              postTitle={post.postTitle}
+              postContent={post.postContent}
+              commentCount={post.commentCount}
             />
           )
         })}
-      </div>
+      </StyledPostList>
     )
   }
 }
