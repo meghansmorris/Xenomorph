@@ -12,7 +12,15 @@ class IndexPage extends React.Component {
     this.state = {
       isModalOpen: false
     };
+    this.toggleModal = this.toggleModal.bind(this);
   }
+
+  toggleModal() {
+    this.setState({
+      isModalOpen: !this.state.isModalOpen
+    })
+  }
+
   render() {
     return (
       <Layout>
@@ -23,9 +31,10 @@ class IndexPage extends React.Component {
         <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
           <Image />
         </div>
+        <button onClick={this.toggleModal}>Open Modal</button>
         {this.state.isModalOpen ?
           (
-            <Modal>
+            <Modal toggleModal={this.toggleModal} title="Test title" styles={{ color: "red" }}>
               <div>Content for modal</div>
             </Modal>
           )
