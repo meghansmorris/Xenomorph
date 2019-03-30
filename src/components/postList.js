@@ -18,15 +18,17 @@ class PostList extends React.Component {
   }
 
   render() {
-    const { posts } = this.props;
+    const { posts, toggleModal } = this.props;
     return (
       <StyledPostList>
         {posts.map((post, index) => {
           return (
-            <Post key={index}
+            <Post key={index} id={post.id}
+              indexValue={index}
               postTitle={post.postTitle}
               postContent={post.postContent}
               commentCount={post.commentCount}
+              toggleModal={toggleModal}
             />
           )
         })}

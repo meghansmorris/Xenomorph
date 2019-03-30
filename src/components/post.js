@@ -6,12 +6,13 @@ class Post extends React.Component {
   }
   //onclick show modal
   render() {
-    const { postTitle, postContent, commentCount, toggleModal } = this.props
+    const { postTitle, postContent, commentCount, toggleModal, id, indexValue } = this.props
     return (
-      <div onClick={toggleModal}>
+      <div>
         <h2>{postTitle}</h2>
         <p>{postContent}</p>
         <p>There are {commentCount} comments</p>
+        <button onClick={toggleModal} id={indexValue}>More</button>
       </div>
     )
   }
